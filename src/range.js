@@ -18,6 +18,14 @@ export default class{
     return this
   }
 
+  map(callback){
+    const result = []
+    for(const i of this){
+      result.push(callback(i))
+    }
+    return result
+  }
+
   toString(){
     if(this.excludeEnd){
       return `${this.start}...${this.end}`

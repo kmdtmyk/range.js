@@ -28,3 +28,8 @@ test('forEach returns self instance', t => {
   const result = range.forEach(() => {})
   t.is(range, result)
 })
+
+test('map', t => {
+  const expect = [0, 1, 4, 9, 16]
+  t.deepEqual(new Range(0, 5).map((i) => {return i * i}), expect)
+})
