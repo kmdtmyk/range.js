@@ -1,0 +1,29 @@
+{
+  "name": "range",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/range.js",
+  "scripts": {
+    "start": "npm run build -- --watch & npm test -- --watch",
+    "build": "NODE_ENV=production webpack",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmdtmyk/range.js.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmdtmyk/range.js/issues"
+  },
+  "homepage": "https://github.com/kmdtmyk/range.js#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
+  },
+  "ava": {
+    "color": true
+  }
+}
