@@ -13,9 +13,21 @@ test('for of', t => {
   }
 })
 
+test('for of (excludeEnd = true)', t => {
+  t.plan(5)
+  for(const i of new Range(0, 5, true)){
+    t.pass()
+  }
+})
+
 test('forEach', t => {
   t.plan(6)
   const result = new Range(0, 5).forEach(() => t.pass())
+})
+
+test('forEach (excludeEnd = true)', t => {
+  t.plan(5)
+  const result = new Range(0, 5, true).forEach(() => t.pass())
 })
 
 test('forEach returns self instance', t => {
@@ -32,6 +44,12 @@ test('map', t => {
 test('toArray', t => {
   const range = new Range(0, 5)
   const expect = [0, 1, 2, 3, 4, 5]
+  t.deepEqual(range.toArray(), expect)
+})
+
+test('toArray (excludeEnd = true)', t => {
+  const range = new Range(0, 5, true)
+  const expect = [0, 1, 2, 3, 4]
   t.deepEqual(range.toArray(), expect)
 })
 
