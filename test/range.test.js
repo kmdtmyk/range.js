@@ -35,6 +35,12 @@ test('toArray', t => {
   t.deepEqual(range.toArray(), expect)
 })
 
+test('toArray (string)', t => {
+  const range = new Range('a', 'f')
+  const expect = ['a', 'b', 'c', 'd', 'e']
+  t.deepEqual(range.toArray(), expect)
+})
+
 test('toString', t => {
   t.is(new Range(0, 5).toString(), '0..5')
   t.is(new Range(0, 5, true).toString(), '0...5')

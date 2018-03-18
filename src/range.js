@@ -27,7 +27,11 @@ export default class{
   }
 
   toArray(){
-    return this.map((i) => {return i})
+    const result = []
+    for(const i of this){
+      result.push(i)
+    }
+    return result
   }
 
   toString(){
@@ -39,8 +43,15 @@ export default class{
   }
 
   *[Symbol.iterator](){
-    for(let i = this.start; i < this.end; i++){
+    const type = typeof this.start
+    let i = this.start
+    while(i < this.end){
       yield i
+      if(type === "string"){
+        i = String.fromCharCode(i.charCodeAt(0) + 1)
+      }else{
+        i = i + 1
+      }
     }
   }
 
