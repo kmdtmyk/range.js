@@ -46,18 +46,21 @@ test('toArray', t => {
   const range = new Range(0, 5)
   const expect = [0, 1, 2, 3, 4, 5]
   t.deepEqual(range.toArray(), expect)
+  t.deepEqual(Array.from(range), expect)
 })
 
 test('toArray (excludeEnd = true)', t => {
   const range = new Range(0, 5, true)
   const expect = [0, 1, 2, 3, 4]
   t.deepEqual(range.toArray(), expect)
+  t.deepEqual(Array.from(range), expect)
 })
 
 test('toArray (string)', t => {
   const range = new Range('a', 'e')
   const expect = ['a', 'b', 'c', 'd', 'e']
   t.deepEqual(range.toArray(), expect)
+  t.deepEqual(Array.from(range), expect)
 })
 
 test('toString', t => {

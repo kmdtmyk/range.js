@@ -31,11 +31,7 @@ export default class{
   }
 
   toArray(){
-    const result = []
-    for(const i of this){
-      result.push(i)
-    }
-    return result
+    return Array.from(this)
   }
 
   toString(){
