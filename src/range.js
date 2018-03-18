@@ -45,7 +45,7 @@ export default class{
   *[Symbol.iterator](){
     const type = typeof this.start
     let i = this.start
-    while(i < this.end){
+    while(i <= this.end){
       yield i
       if(type === "string"){
         i = String.fromCharCode(i.charCodeAt(0) + 1)
