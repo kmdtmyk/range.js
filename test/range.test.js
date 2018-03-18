@@ -3,4 +3,5 @@ import Range from '../dist/range'
 
 test('toString', t => {
   t.is(new Range(0, 5).toString(), '0..5')
+  t.is(new Range(0, 5, true).toString(), '0...5')
 })
