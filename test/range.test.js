@@ -10,3 +10,10 @@ test('toString', t => {
   t.is(new Range(0, 5).toString(), '0..5')
   t.is(new Range(0, 5, true).toString(), '0...5')
 })
+
+test('for of', t => {
+  t.plan(5)
+  for(const i of new Range(0, 5)){
+    t.pass()
+  }
+})

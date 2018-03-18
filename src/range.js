@@ -19,4 +19,10 @@ export default class{
     }
   }
 
+  *[Symbol.iterator](){
+    for(let i = 0; i < this.end; i++){
+      yield i
+    }
+  }
+
 }
