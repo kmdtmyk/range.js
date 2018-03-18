@@ -6,11 +6,6 @@ test('invalid constructor parameters', t => {
   t.throws(() => new Range(0))
 })
 
-test('toString', t => {
-  t.is(new Range(0, 5).toString(), '0..5')
-  t.is(new Range(0, 5, true).toString(), '0...5')
-})
-
 test('for of', t => {
   t.plan(5)
   for(const i of new Range(0, 5)){
@@ -32,4 +27,15 @@ test('forEach returns self instance', t => {
 test('map', t => {
   const expect = [0, 1, 4, 9, 16]
   t.deepEqual(new Range(0, 5).map((i) => {return i * i}), expect)
+})
+
+test('toArray', t => {
+  const range = new Range(0, 5)
+  const expect = [0, 1, 2, 3, 4]
+  t.deepEqual(range.toArray(), expect)
+})
+
+test('toString', t => {
+  t.is(new Range(0, 5).toString(), '0..5')
+  t.is(new Range(0, 5, true).toString(), '0...5')
 })

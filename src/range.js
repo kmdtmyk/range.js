@@ -26,6 +26,10 @@ export default class{
     return result
   }
 
+  toArray(){
+    return this.map((i) => {return i})
+  }
+
   toString(){
     if(this.excludeEnd){
       return `${this.start}...${this.end}`
@@ -35,7 +39,7 @@ export default class{
   }
 
   *[Symbol.iterator](){
-    for(let i = 0; i < this.end; i++){
+    for(let i = this.start; i < this.end; i++){
       yield i
     }
   }
