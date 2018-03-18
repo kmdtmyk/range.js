@@ -4,6 +4,7 @@ import Range from '../dist/range'
 test('invalid constructor parameters', t => {
   t.throws(() => new Range())
   t.throws(() => new Range(0))
+  t.throws(() => new Range(0, '0'))
 })
 
 test('for of', t => {

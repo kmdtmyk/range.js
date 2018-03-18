@@ -6,6 +6,10 @@ export default class{
       const message = `Failed to construct 'Range': 2 argument required, but only ${length} present.`
       throw new TypeError(message)
     }
+    if(typeof start !== typeof end){
+      const message = `Illegal constructor`
+      throw new TypeError(message)
+    }
     this.start = start
     this.end = end
     this.excludeEnd = excludeEnd
