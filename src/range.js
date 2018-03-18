@@ -11,6 +11,13 @@ export default class{
     this.excludeEnd = excludeEnd
   }
 
+  forEach(callback){
+    for(const i of this){
+      callback(i)
+    }
+    return this
+  }
+
   toString(){
     if(this.excludeEnd){
       return `${this.start}...${this.end}`

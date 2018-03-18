@@ -17,3 +17,14 @@ test('for of', t => {
     t.pass()
   }
 })
+
+test('forEach', t => {
+  t.plan(5)
+  const result = new Range(0, 5).forEach(() => t.pass())
+})
+
+test('forEach returns self instance', t => {
+  const range = new Range(0, 5)
+  const result = range.forEach(() => {})
+  t.is(range, result)
+})
