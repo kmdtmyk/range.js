@@ -30,6 +30,15 @@ export default class{
     return result
   }
 
+  step(step, callback){
+    this._step = step
+    for(const i of this){
+      callback(i)
+    }
+    delete this._step
+    return this
+  }
+
   toArray(){
     return Array.from(this)
   }
@@ -44,13 +53,14 @@ export default class{
 
   *[Symbol.iterator](){
     const type = typeof this.start
+    const step = this._step || 1
     let i = this.start
     while(true){
       yield i
       if(type === "string"){
-        i = String.fromCharCode(i.charCodeAt(0) + 1)
+        i = String.fromCharCode(i.charCodeAt(0) + step)
       }else{
-        i = i + 1
+        i = i + step
       }
       if(this.excludeEnd && i < this.end === false){
         break

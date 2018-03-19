@@ -42,6 +42,16 @@ test('map', t => {
   t.deepEqual(new Range(0, 5).map((i) => {return i * i}), expect)
 })
 
+test('step', t => {
+  t.plan(6)
+  new Range(0, 10).step(2, () => t.pass())
+})
+
+test('step (excludeEnd = true)', t => {
+  t.plan(5)
+  new Range(0, 10, true).step(2, () => t.pass())
+})
+
 test('toArray', t => {
   const range = new Range(0, 5)
   const expect = [0, 1, 2, 3, 4, 5]
