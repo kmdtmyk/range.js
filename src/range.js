@@ -31,6 +31,12 @@ export default class{
   }
 
   step(step, callback){
+    if(step === 0){
+      throw new TypeError("step can't be 0")
+    }
+    if(step < 0){
+      throw new TypeError("step can't be negative")
+    }
     this._step = step
     for(const i of this){
       callback(i)

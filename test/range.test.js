@@ -52,6 +52,12 @@ test('step (excludeEnd = true)', t => {
   new Range(0, 10, true).step(2, () => t.pass())
 })
 
+test('step with argument error', t => {
+  const range = new Range(0, 5)
+  t.throws(() => range.step(0, () => {}))
+  t.throws(() => range.step(-1, () => {}))
+})
+
 test('toArray', t => {
   const range = new Range(0, 5)
   const expect = [0, 1, 2, 3, 4, 5]
