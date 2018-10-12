@@ -10,9 +10,9 @@ export default class{
       const message = `Illegal constructor`
       throw new TypeError(message)
     }
-    this.start = start
-    this.end = end
-    this.excludeEnd = excludeEnd
+    this._start = start
+    this._end = end
+    this._excludeEnd = excludeEnd
   }
 
   forEach(callback){
@@ -54,17 +54,17 @@ export default class{
   }
 
   toString(){
-    if(this.excludeEnd){
-      return `${this.start}...${this.end}`
+    if(this._excludeEnd){
+      return `${this._start}...${this._end}`
     }else{
-      return `${this.start}..${this.end}`
+      return `${this._start}..${this._end}`
     }
   }
 
   *[Symbol.iterator](){
-    const type = typeof this.start
+    const type = typeof this._start
     const step = this._step || 1
-    let i = this.start
+    let i = this._start
     while(true){
       yield i
       if(type === "string"){
@@ -72,9 +72,9 @@ export default class{
       }else{
         i = i + step
       }
-      if(this.excludeEnd && i < this.end === false){
+      if(this._excludeEnd && i < this._end === false){
         break
-      }else if(i <= this.end === false){
+      }else if(i <= this._end === false){
         break
       }
     }
