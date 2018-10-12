@@ -20,6 +20,8 @@
   "homepage": "https://github.com/kmdtmyk/range.js#readme",
   "devDependencies": {
     "ava": "^0.25.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^2.0.12"
   },
