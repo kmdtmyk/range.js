@@ -13,7 +13,7 @@ npm install @kmdtmyk/range
 ## Usage
 
 ```javascript
-import Range from 'range'
+import Range from '@kmdtmyk/range'
 
 const range = new Range(0, 5)
 
