@@ -16,7 +16,7 @@ describe('for of', () => {
     expect(count).toBe(6)
   })
 
-  test('excludeEnd = true', () => {
+  test('exclude end', () => {
     let count = 0
     for(const i of new Range(0, 5, true)){
       count++
@@ -34,7 +34,7 @@ describe('forEach', () => {
     expect(count).toBe(6)
   })
 
-  test('excludeEnd = true', () => {
+  test('exclude end', () => {
     let count = 0
     new Range(0, 5, true).forEach(() => count++)
     expect(count).toBe(5)
@@ -68,7 +68,7 @@ describe('step', () => {
     expect(result).toEqual([0, 2, 4, 6, 8, 10])
   })
 
-  test('excludeEnd = true', () => {
+  test('exclude end', () => {
     let count = 0
     new Range(0, 10, true).step(2, () => count++)
     expect(count).toBe(5)
@@ -91,7 +91,7 @@ describe('toArray', () => {
     expect(Array.from(range)).toEqual(array)
   })
 
-  test('excludeEnd = true', () => {
+  test('exclude end', () => {
     const range = new Range(0, 5, true)
     const array = [0, 1, 2, 3, 4]
     expect(range.toArray()).toEqual(array)
