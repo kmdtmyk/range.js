@@ -66,9 +66,9 @@ export default class{
     const step = this._step || 1
     let value = this._start
     while(true){
-      if(this._excludeEnd && value < this._end === false){
+      if(this._excludeEnd && this._end <= value){
         break
-      }else if(value <= this._end === false){
+      }else if(this._end < value){
         break
       }
       yield value
