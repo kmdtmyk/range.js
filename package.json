@@ -20,7 +20,7 @@
   "homepage": "https://github.com/kmdtmyk/range.js#readme",
   "devDependencies": {
     "ava": "^0.25.0",
-    "webpack": "^4.1.1",
+    "webpack": "^4.20.2",
     "webpack-cli": "^2.0.12"
   },
   "ava": {
