@@ -1,12 +1,13 @@
 {
   "name": "range",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/range.js",
   "scripts": {
-    "start": "npm run build -- --watch & npm test -- --watch",
-    "build": "NODE_ENV=production webpack",
-    "test": "ava"
+    "start": "npm test -- --watch",
+    "test": "jest",
+    "build": "webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,6 @@
   },
   "homepage": "https://github.com/kmdtmyk/range.js#readme",
   "devDependencies": {
-    "ava": "^0.25.0",
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0",
     "webpack": "^4.20.2",
