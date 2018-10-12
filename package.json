@@ -1,5 +1,5 @@
 {
-  "name": "range",
+  "name": "@kmdtmyk/range",
   "version": "0.0.0",
   "description": "A javascript library inspired by ruby range.",
   "main": "dist/range.js",
