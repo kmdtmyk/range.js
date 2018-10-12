@@ -38,11 +38,15 @@ export default class{
       throw new TypeError("step can't be negative")
     }
     this._step = step
+    const result = []
     for(const i of this){
-      callback(i)
+      result.push(i)
+      if(callback){
+        callback(i)
+      }
     }
     delete this._step
-    return this
+    return result
   }
 
   toArray(){

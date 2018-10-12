@@ -62,6 +62,12 @@ describe('step', () => {
     expect(count).toBe(6)
   })
 
+  test('return array', () => {
+    const range = new Range(0, 10)
+    const result = range.step(2)
+    expect(result).toEqual([0, 2, 4, 6, 8, 10])
+  })
+
   test('excludeEnd = true', () => {
     let count = 0
     new Range(0, 10, true).step(2, () => count++)
