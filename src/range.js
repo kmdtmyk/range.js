@@ -64,18 +64,18 @@ export default class{
   *[Symbol.iterator](){
     const type = typeof this._start
     const step = this._step || 1
-    let i = this._start
+    let value = this._start
     while(true){
-      yield i
-      if(type === "string"){
-        i = String.fromCharCode(i.charCodeAt(0) + step)
-      }else{
-        i = i + step
+      if(this._excludeEnd && value < this._end === false){
+        break
+      }else if(value <= this._end === false){
+        break
       }
-      if(this._excludeEnd && i < this._end === false){
-        break
-      }else if(i <= this._end === false){
-        break
+      yield value
+      if(type === "string"){
+        value = String.fromCharCode(value.charCodeAt(0) + step)
+      }else{
+        value = value + step
       }
     }
   }

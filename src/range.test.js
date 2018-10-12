@@ -24,6 +24,14 @@ describe('for of', () => {
     expect(count).toBe(5)
   })
 
+  test('start > end', () => {
+    let count = 0
+    for(const i of new Range(0, -1)){
+      count++
+    }
+    expect(count).toBe(0)
+  })
+
 })
 
 describe('forEach', () => {
