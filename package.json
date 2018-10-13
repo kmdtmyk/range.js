@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/kmdtmyk/range.js#readme",
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.4",
     "jest": "^23.6.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
